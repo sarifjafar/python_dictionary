@@ -1,8 +1,10 @@
 import json
 import difflib 
 
+#Load the JSON file containg Word mapping to its Meaning
 data = json.load(open("data.json"))
 
+#Return the Meaning of Word equal to the param or possible closest to it.
 def getMeaning(input_word):
     input_word = input_word.lower()
     if input_word in data:
@@ -29,8 +31,7 @@ def getMeaning(input_word):
 
 
 inp = str(input("Enter Word :"))
-result = getMeaning(inp)
-# print(type(result))
+result = getMeaning(inp) #getMeaning() return a List of Meaning of Words
 if type(result) == list:
     i = 1
     print("-----------------------------------------------------------------\n")
